@@ -1,91 +1,68 @@
-# 🚀 제로톤 스타터 킷
+# 🍔 푸드네이터 (Food-nator)
 
-> Zero에서 One을 만드는 2시간의 경험
+> **"오늘 뭐 먹지?" 10번의 질문으로 당신의 입맛을 스캔하는 음식 아키네이터**
+> 
+> 
+> 🚀 **Team ZeroOne - 제로톤(Zero-Thon) 프로젝트** (2시간 해커톤 결과물)
+> 
 
-매주 수요일 2시간 미니 해커톤 **"제로톤(Zero-Thon)"** 을 위한 스타터 킷 템플릿입니다.
-GitHub의 "Use this template" 버튼으로 새 레포를 생성하면, 즉시 기능 개발에 착수할 수 있습니다.
+<br/>
 
-## 역할별 시작 가이드
+## 📖 프로젝트 개요
 
-| 역할 | 시작 파일 | 설명 |
-|------|-----------|------|
-| 🎯 **기획자** | `docs/plan.md` · `docs/ppt.md` | 아이디어 구체화 + 발표 준비 |
-| 💻 **개발자** | `docs/dev.md` · `frontend/src/` | 개발 문서 작성 후 코딩 시작 |
-| 📢 **마케터** | `docs/marketing.md` | 사용자에게 다가가세요 |
+점심시간마다 메뉴를 고르지 못해 귀중한 휴식 시간을 낭비하는 현대인들을 위한 **'결정장애 해결' 웹 서비스**입니다.
+유명한 스무고개 게임인 '아키네이터'의 추론 알고리즘을 도입하여, 단 10개의 질문만으로 사용자의 현재 기분과 취향을 분석해 15가지 핵심 한식 중 가장 완벽한 메뉴를 제안합니다.
 
-## 문서 작성 가이드
+- **Pain Point**: 수많은 선택지 앞에서 결정을 내리지 못하는 '선택의 패러독스'와 메뉴 결정 피로감
+- **Solution**: 질문과 답변을 통한 이분법적 속성 필터링으로 '재미'와 '명확한 결과' 제공
 
-`docs/` 폴더의 각 문서는 마크다운(.md) 형식의 템플릿입니다.
-`[ ]` 체크박스, 테이블, 가이드 질문을 따라 작성하면 됩니다.
+<br/>
 
-- **plan.md**: 프로젝트 개요, 타겟, MVP 범위, 타임라인 (기획자)
-- **dev.md**: 기술 스택, 화면 구성, API 설계, AI 프롬프트 기록 (개발자)
-- **marketing.md**: 페르소나, 카피라이팅, 유입 전략 (마케터)
-- **ppt.md**: 4분 발표 스크립트 — Pain → Solution → Demo → Scalability (기획자)
+## ✨ 핵심 기능 (Features)
 
-## 시작하기
+1. **지능형 아키네이터 엔진**
+    - 백엔드 서버 없이 프론트엔드 단에서 가볍게 동작하는 고속 필터링 엔진
+    - 15종의 한식 DB와 속성 태그(국물 유무, 매운 정도 등)를 기반으로 한 교집합 검사 로직
+2. **가변형 질문 UI**
+    - 질문의 성격에 따라 2개(예/아니오)에서 최대 5개까지 유동적으로 변하는 답변 버튼 제공
+    - 사용자의 애매한 마음까지 반영하는 디테일한 선택지 설정
+3. **Early Exit (조기 종료) 및 결과 도출**
+    - 10단계 질문이 끝나기 전이라도 조건에 맞는 음식이 1개로 좁혀지면 즉시 결과 노출
+    - 추천된 음식의 명확한 사유(속성 매핑 결과) 제공
 
-### 1. 템플릿으로 내 레포 생성
-이 레포 상단의 **"Use this template"** → **"Create a new repository"** 클릭하여 내 레포를 만드세요.
-- **Owner**: `zeroone-2025`로 설정
-- **Repository name**: 팀 프로젝트명으로 지어주세요
+<br/>
 
-### 2. 클론 & 의존성 설치
+## 🛠 기술 스택 (Tech Stack)
+
+본 프로젝트는 2시간이라는 제한된 시간 내에 극강의 효율을 내기 위해 **순수 프론트엔드 환경**과 **AI 코딩 도구**를 적극 활용했습니다.
+
+- **Framework / Library**: React (또는 Next.js Client Component)
+- **Styling / UI**: Tailwind CSS, shadcn/ui
+- **State Management**: Zustand (또는 React Context API)
+- **AI Tools**: Claude Code, Antigravity (코드 생성 및 환경 배포), NotebookLM (기획)
+
+<br/>
+
+## 📂 프로젝트 문서 (Docs)
+
+기획부터 개발, 마케팅까지 각 파트별 상세 산출물은 아래 마크다운 파일에서 확인하실 수 있습니다.
+
+- [📋 기획 문서 (plan.md)](https://www.notion.so/plan.md): 프로젝트 MVP 범위 및 15종 음식/질문 데이터셋
+- [🛠️ 개발 문서 (dev.md)](https://www.notion.so/dev.md): 프론트엔드 아키텍처, 필터링 로직 및 AI 프롬프트
+- [📢 마케팅 문서 (marketing.md)](https://www.notion.so/marketing.md): 타겟 분석 및 홍보 카피라이팅
+- [🎤 발표 스크립트 (ppt.md)](https://www.notion.so/ppt.md): 제로톤 최종 발표용 5분 피치 덱
+
+<br/>
+
+## 🚀 시작하기 (Getting Started)
+
 ```bash
-git clone https://github.com/zeroone-2025/<내-레포명>.git
-cd <내-레포명>/frontend
+# 레포지토리 클론
+git clone [<https://github.com/zeroone-2025/zerothon-template.git>](<https://github.com/zeroone-2025/zerothon-template.git>)
+
+# 의존성 설치
 npm install
-```
 
-### 3. 개발 서버 실행
-```bash
+# 로컬 서버 실행
 npm run dev
 ```
-[http://localhost:3000](http://localhost:3000)에서 정상 동작을 확인하세요.
-
-### 4. 초기 파일 삭제 후 개발 시작
-`src/app/page.tsx`를 삭제하고 개발을 시작하세요.
-
-## 기술 스택
-
-| 기술 | 용도 |
-|------|------|
-| **Next.js 15** | App Router 기반 풀스택 프레임워크 |
-| **React 19** | UI 라이브러리 |
-| **TypeScript** | 타입 안전성 |
-| **Tailwind CSS** | 유틸리티 퍼스트 스타일링 |
-| **shadcn/ui** | 재사용 가능한 UI 컴포넌트 |
-| **React Query** | 서버 상태 관리 |
-| **Zustand** | 클라이언트 상태 관리 |
-| **Lucide Icons** | 아이콘 라이브러리 |
-
-## 폴더 구조
-
-```
-zerothon-template/
-├── frontend/          # Next.js 프로젝트 (개발자 영역)
-│   └── src/
-│       ├── app/       # 페이지 & API 라우트
-│       ├── components/# UI 컴포넌트
-│       ├── hooks/     # 커스텀 훅
-│       ├── lib/       # 유틸리티
-│       ├── providers/ # Provider 컴포넌트
-│       └── stores/    # Zustand 스토어
-├── docs/              # 문서 템플릿 (비개발자도 안전하게 접근)
-│   ├── plan.md        # 기획 문서
-│   ├── dev.md         # 개발 문서
-│   ├── marketing.md   # 마케팅 문서
-│   └── ppt.md         # 발표 스크립트
-├── CLAUDE.md          # AI 에이전트 가이드
-└── README.md          # 이 파일
-```
-
-## 배포 (Vercel)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/YOUR_REPO&root-directory=frontend)
-
-### 배포 방법
-1. [Vercel](https://vercel.com)에 GitHub 계정으로 로그인
-2. "Import Project" → 생성한 레포 선택
-3. **Root Directory**를 `frontend`로 설정
-4. "Deploy" 클릭
