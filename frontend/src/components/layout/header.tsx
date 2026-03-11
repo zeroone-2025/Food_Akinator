@@ -5,7 +5,7 @@ export function Header() {
     <header className="border-b">
       <div className="container mx-auto flex h-14 items-center px-4">
         <Link href="/" className="text-lg font-bold">
-          🚀 제로톤 프로젝트
+          🍱 푸드네이터
         </Link>
       </div>
     </header>
