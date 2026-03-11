@@ -23,8 +23,8 @@ export const questions: Question[] = [
       { label: "아니요, 간단하게 먹고 싶어요", value: "no" },
     ],
     filter: (food, answer) => {
-      if (answer === "yes") return food.mealType === "meal";
-      if (answer === "no") return food.mealType !== "meal";
+      if (answer === "yes") return food.tags.mealType === "meal";
+      if (answer === "no") return food.tags.mealType !== "meal";
       return true;
     },
   },
