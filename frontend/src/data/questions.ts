@@ -15,9 +15,24 @@ export interface Question {
 
 export const questions: Question[] = [
   {
-    id: "q1_meal",
-    text: "지금 든든한 '밥'이 먹고 싶나요?",
-    subText: "식사를 원하는지 간단한 간식을 원하는지 알려주세요",
+    id: "q1_cuisine",
+    text: "어떤 나라 음식이 먹고 싶나요?",
+    subText: "한식, 일식, 중식 중에서 골라보세요",
+    options: [
+      { label: "🇰🇷 한식이 좋아요", value: "korean" },
+      { label: "🇯🇵 일식이 끌려요", value: "japanese" },
+      { label: "🇨🇳 중식이 당겨요", value: "chinese" },
+      { label: "상관없어요, 뭐든 좋아요", value: "any" },
+    ],
+    filter: (food, answer) => {
+      if (answer === "any") return true;
+      return food.cuisine === answer;
+    },
+  },
+  {
+    id: "q2_meal",
+    text: "지금 든든한 '식사'가 하고 싶나요?",
+    subText: "제대로 된 한 끼인지, 간단한 간식인지 알려주세요",
     options: [
       { label: "네, 제대로 된 식사가 하고 싶어요", value: "yes" },
       { label: "아니요, 간단하게 먹고 싶어요", value: "no" },
@@ -29,9 +44,9 @@ export const questions: Question[] = [
     },
   },
   {
-    id: "q2_soup",
+    id: "q3_soup",
     text: "따끈한 '국물'이 있는 요리를 원하시나요?",
-    subText: "찌개, 탕, 국 종류를 좋아하신다면 예를 선택하세요",
+    subText: "찌개, 탕, 라멘, 훠궈 등 국물 있는 음식",
     options: [
       { label: "네, 국물이 있으면 좋겠어요", value: "yes" },
       { label: "아니요, 국물 없어도 괜찮아요", value: "no" },
@@ -44,7 +59,7 @@ export const questions: Question[] = [
     },
   },
   {
-    id: "q3_spicy",
+    id: "q4_spicy",
     text: "오늘 '매운맛'이 당기나요?",
     subText: "스트레스를 매운 음식으로 풀고 싶으신가요?",
     options: [
@@ -61,12 +76,12 @@ export const questions: Question[] = [
     },
   },
   {
-    id: "q4_meat",
+    id: "q5_meat",
     text: "주재료로 '고기'가 들어갔으면 좋겠나요?",
     subText: "돼지고기, 소고기, 닭고기 등 육류 포함 여부",
     options: [
-      { label: "네, 고기가 필수예요", value: "yes" },
-      { label: "아니요, 채소나 다른 재료도 좋아요", value: "no" },
+      { label: "네, 고기가 있어야 해요", value: "yes" },
+      { label: "아니요, 채소·해산물도 좋아요", value: "no" },
     ],
     filter: (food, answer) => {
       if (answer === "yes") return food.tags.meat !== "none";
@@ -75,9 +90,9 @@ export const questions: Question[] = [
     },
   },
   {
-    id: "q5_temperature",
+    id: "q6_temperature",
     text: "시원하거나 '차가운' 음식도 괜찮나요?",
-    subText: "냉면, 육회 같은 차가운 음식을 원하시나요?",
+    subText: "냉면, 스시, 쫄면 같은 차가운 음식을 원하시나요?",
     options: [
       { label: "네, 차가운 게 오히려 좋아요", value: "cold" },
       { label: "아니요, 따뜻한 게 좋아요", value: "hot" },
@@ -90,24 +105,9 @@ export const questions: Question[] = [
     },
   },
   {
-    id: "q6_cooking",
-    text: "오늘 원하는 조리 방식은 무엇인가요?",
-    subText: "어떤 방식으로 만든 음식이 땡기나요?",
-    options: [
-      { label: "구이 (불에 굽는 것)", value: "grill" },
-      { label: "찌개·탕 (끓이는 것)", value: "stew" },
-      { label: "볶음 (볶아낸 것)", value: "stirfry" },
-      { label: "뭐든 상관없어요", value: "any" },
-    ],
-    filter: (food, answer) => {
-      if (answer === "any") return true;
-      return food.tags.cookingMethod === answer;
-    },
-  },
-  {
     id: "q7_noodle",
     text: "후루룩 먹기 좋은 '면 요리'가 당기나요?",
-    subText: "냉면, 칼국수, 잡채 같은 면 종류를 좋아하신다면",
+    subText: "냉면, 라멘, 우동, 짜장면 등 면류",
     options: [
       { label: "네, 면 요리가 좋아요", value: "yes" },
       { label: "아니요, 면보다 다른 게 좋아요", value: "no" },
@@ -119,7 +119,23 @@ export const questions: Question[] = [
     },
   },
   {
-    id: "q8_budget",
+    id: "q8_cooking",
+    text: "오늘 원하는 조리 방식은 무엇인가요?",
+    subText: "어떤 방식으로 만든 음식이 끌리나요?",
+    options: [
+      { label: "구이 (직화로 굽는 것)", value: "grill" },
+      { label: "찌개·탕 (끓이는 것)", value: "stew" },
+      { label: "볶음 (센 불에 볶는 것)", value: "stirfry" },
+      { label: "튀김 (바삭하게 튀긴 것)", value: "fry" },
+      { label: "뭐든 상관없어요", value: "any" },
+    ],
+    filter: (food, answer) => {
+      if (answer === "any") return true;
+      return food.tags.cookingMethod === answer;
+    },
+  },
+  {
+    id: "q9_budget",
     text: "오늘 식사 예산은 어느 정도인가요?",
     subText: "1만원을 기준으로 선택해주세요",
     options: [
@@ -128,12 +144,11 @@ export const questions: Question[] = [
     ],
     filter: (food, answer) => {
       if (answer === "low") return food.tags.budget === "low";
-      if (answer === "high") return true; // 비싼 것도 괜찮으면 다 가능
       return true;
     },
   },
   {
-    id: "q9_social",
+    id: "q10_social",
     text: "지금 식사 분위기는 어떤가요?",
     subText: "혼자 조용히 vs 여럿이 시끌벅적",
     options: [
@@ -149,7 +164,7 @@ export const questions: Question[] = [
     },
   },
   {
-    id: "q10_feeling",
+    id: "q11_feeling",
     text: "지금 당장 생각나는 느낌은 무엇인가요?",
     subText: "마지막 질문! 가장 끌리는 느낌을 선택하세요",
     options: [
