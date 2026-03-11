@@ -8,7 +8,7 @@ export default function Home() {
       <div className="text-center max-w-md mx-auto">
         {/* Badge */}
         <Badge variant="secondary" className="mb-6 text-sm py-1 px-4">
-          🍱 한식 추천 아키네이터
+          🍱 푸드네이터
         </Badge>
 
         {/* 메인 이모지 */}
@@ -21,10 +21,10 @@ export default function Home() {
 
         {/* 설명 */}
         <p className="text-lg text-muted-foreground mb-2">
-          10개의 질문으로 오늘 당신이 먹고 싶은
+          11개의 질문으로 오늘 당신이 먹고 싶은
         </p>
         <p className="text-lg text-muted-foreground mb-8">
-          한국 음식을 맞혀드릴게요!
+          음식을 맞혀드릴게요!
         </p>
 
         {/* 시작 버튼 */}
@@ -36,7 +36,7 @@ export default function Home() {
 
         {/* 서브 텍스트 */}
         <p className="text-sm text-muted-foreground mt-4">
-          15종 한식 중 딱 맞는 메뉴를 추천해드려요
+          45종 음식 중 딱 맞는 메뉴를 추천해드려요
         </p>
 
         {/* 음식 아이콘들 */}
